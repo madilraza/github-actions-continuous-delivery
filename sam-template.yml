@@ -14,7 +14,7 @@ Resources:
       Handler: index.handler
       
       # The location of the Lambda function code.
-      CodeUri: src
+      CodeUri: .
       
       # Event sources to attach to this function. In this case, we are attaching
       # one API Gateway endpoint to the Lambda function. The function is
