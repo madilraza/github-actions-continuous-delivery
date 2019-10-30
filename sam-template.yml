@@ -1,7 +1,7 @@
 Transform: 'AWS::Serverless-2016-10-31'
 Resources:
 
-  ThumbnailFunction:
+  MainFunction:
     # This resource creates a Lambda function.
     Type: 'AWS::Serverless::Function'
     
@@ -11,7 +11,7 @@ Resources:
       Runtime: nodejs8.10
         
       # This is the Lambda function's handler.
-      Handler: index.handler
+      Handler: handler.lambdaHandler
       
       # The location of the Lambda function code.
       CodeUri: .
@@ -21,9 +21,21 @@ Resources:
       # called when a HTTP request is made to the API Gateway endpoint.
       Events:
 
-        ThumbnailApi:
+        MainPage:
             # Define an API Gateway endpoint that responds to HTTP GET at /thumbnail
             Type: Api
             Properties:
-                Path: /thumbnail
+                Path: /
+                Method: GET
+        CSSFile:
+            # Define an API Gateway endpoint that responds to HTTP GET at /thumbnail
+            Type: Api
+            Properties:
+                Path: /public/index.css
+                Method: GET
+        JSFile:
+            # Define an API Gateway endpoint that responds to HTTP GET at /thumbnail
+            Type: Api
+            Properties:
+                Path: /public/main.js
                 Method: GET
