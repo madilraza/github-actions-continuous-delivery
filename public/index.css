@@ -1,8 +1,10 @@
-table {
+#game { display: flex; }
+
+#tictactoe {
   border-collapse: collapse;
 }
 
-table td {
+#tictactoe td {
   min-height: 100px;
   min-width: 100px;
   height: 100px;
@@ -13,14 +15,34 @@ table td {
   border: thin solid black;
 }
 
-table td:hover {
+#tictactoe td:hover {
   background: #CCCCCC;
 }
 
-table tr {
+#tictactoe tr {
   width: 300px;
   height: 100px;
 }
+
+#score {
+  margin-left: 5%;
+}
+
+#score table {
+  border-collapse: collapse;
+}
+
+#score tr > * {
+  padding: 5px;
+  text-align: center;
+}
+
+#score th {
+  border-bottom: thin solid black;
+}
+
+#score h2 { margin-top: 0; }
+
 
 #app {
   margin: auto;
